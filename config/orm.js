@@ -81,5 +81,4 @@ var orm = {
   }
 };
 
-// Export for stew.js
 module.exports = orm;

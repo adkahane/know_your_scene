@@ -5,10 +5,12 @@
 // and the element must have CSS styling to give it width and height
 // optionally, a third argument with configuration options can be passed.
 // See below for more about options.
+
+var timeline_json = '../timeline.json';
 var additionalOptions = {
   start_at_end: true,
   default_bg_color: {r:0, g:0, b:0},
   timenav_height: 250
 }
 
-timeline = new TL.Timeline('timeline-embed', 'timeline_json' , additionalOptions);
+window.timeline = new TL.Timeline('timeline-embed', timeline_json , additionalOptions);
