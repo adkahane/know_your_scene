@@ -9,7 +9,7 @@ DROP TABLE IF EXISTS band;
 
 -- Create the band table
 CREATE TABLE band (
-    band_id int NOT NULL AUTO_INCREMENT,
+    band_id int UNIQUE NOT NULL AUTO_INCREMENT,
     band_name varchar (255) NOT NULL,
     band_state varchar (2) NOT NULL,
     band_city varchar (25) NOT NULL,
@@ -20,7 +20,7 @@ CREATE TABLE band (
 
 -- Create the songs table
 CREATE TABLE song (
-  song_id int NOT NULL AUTO_INCREMENT,
+  song_id int UNIQUE NOT NULL AUTO_INCREMENT,
   song_name varchar (255) NOT NULL,
   album varchar (255),
   released year,
@@ -31,7 +31,7 @@ CREATE TABLE song (
 
 -- Create concerts table
 CREATE TABLE concert (
-  concert_id int NOT NULL AUTO_INCREMENT,
+  concert_id int UNIQUE NOT NULL AUTO_INCREMENT,
   concert_date date NOT NULL,
   concert_venue varchar (40),
   concert_city varchar (30),

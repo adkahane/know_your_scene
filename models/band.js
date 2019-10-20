@@ -6,6 +6,11 @@ var band = {
       cb(res);
     });
   },
+  selectOne: function(searchInput, cb) {
+    orm.selectOne("band", searchInput, function(res) {
+      cb(res);
+    });
+  },
   insertOne: function(cols, vals, cb) {
     orm.insertOne("band", cols, vals, function(res) {
       cb(res);

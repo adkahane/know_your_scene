@@ -40,6 +40,16 @@ var orm = {
       cb(result);
     });
   },
+  // Select one from a table
+  selectOne: function(tableInput, searchInput, cb) {
+    var queryString = "SELECT band_name, song_name FROM " + tableInput + " INNER JOIN song ON band.band_id = song._band_id WHERE band_name = '" + searchInput + "';";
+    connection.query(queryString, function(err, result) {
+      if (err) {
+        throw err;
+      }
+      cb(result);
+    });
+  },
   // Insert into a table
   insertOne: function(table, cols, vals, cb) {
     var queryString = "INSERT INTO " + table;
