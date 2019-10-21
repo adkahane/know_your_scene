@@ -29,7 +29,7 @@ router.get("/songs", function(req,res) {
 });
 
 // GET route to grab a band and all of their songs
-router.get("/bandInfo/kkl:band", function(req,res) {
+router.get("/bandInfo/:band", function(req,res) {
   band.selectOne(req.params.band, function(bandData) {
     console.log(bandData);
     res.json(bandData);
