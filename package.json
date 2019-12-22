@@ -1,27 +1,19 @@
 {
   "name": "know_your_scene",
   "version": "1.0.0",
-  "description": "Chronicle and view a timeline of your city's music scene",
-  "main": "server.js",
-  "dependencies": {
-    "express": "^4.17.1",
-    "mysql": "^2.17.1",
-    "nodemon": "^1.19.4",
-    "sequelize": "^5.19.7"
-  },
-  "devDependencies": {},
+  "description": "",
+  "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "nodemon server.js"
+    "dev": "next",
+    "build": "next build",
+    "start": "next start"
   },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/adkahane/know_your_scene.git"
-  },
+  "keywords": [],
   "author": "",
   "license": "ISC",
-  "bugs": {
-    "url": "https://github.com/adkahane/know_your_scene/issues"
-  },
-  "homepage": "https://github.com/adkahane/know_your_scene#readme"
+  "dependencies": {
+    "next": "^9.1.6",
+    "react": "^16.12.0",
+    "react-dom": "^16.12.0"
+  }
 }
