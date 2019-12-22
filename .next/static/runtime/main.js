@@ -5157,7 +5157,7 @@ function connect(options) {
       error.name = err.name;
       error.stack = err.stack; // __NEXT_DIST_DIR is provided by webpack
 
-      (0, _sourceMapSupport.rewriteStacktrace)(error, "C:\\Users\\akaha\\Desktop\\github_projects\\know_your_scene\\know_your_scene\\.next");
+      (0, _sourceMapSupport.rewriteStacktrace)(error, "C:\\Users\\akaha\\Desktop\\github_projects\\know_your_scene\\.next");
       return error;
     }
   };
