@@ -88,7 +88,7 @@ module.exports =
 /******/
 /******/
 /******/ 	// Load entry module and return exports
-/******/ 	return __webpack_require__(__webpack_require__.s = 4);
+/******/ 	return __webpack_require__(__webpack_require__.s = 3);
 /******/ })
 /************************************************************************/
 /******/ ({
@@ -104,7 +104,7 @@ module.exports =
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "react");
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
-var _jsxFileName = "C:\\Users\\akaha\\Desktop\\github_projects\\know_your_scene\\pages\\index.js";
+var _jsxFileName = "/home/adam/Desktop/project_workspace/know_your_scene/pages/index.js";
 
 var __jsx = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement;
 
@@ -273,12 +273,15 @@ const Index = () => __jsx("body", {
   __self: undefined
 }, "2003")))), __jsx("div", {
   id: "timeline-embed",
+  style: {
+    width: '100%'
+  },
   __source: {
     fileName: _jsxFileName,
     lineNumber: 35
   },
   __self: undefined
-})), "// Optional JavaScript", __jsx("script", {
+})), __jsx("script", {
   src: "assets/app.js",
   __source: {
     fileName: _jsxFileName,
@@ -292,7 +295,7 @@ const Index = () => __jsx("body", {
     lineNumber: 39
   },
   __self: undefined
-}), "// jQuery first, then Popper.js, then Bootstrap JS", __jsx("script", {
+}), __jsx("script", {
   src: "https://code.jquery.com/jquery-3.3.1.slim.min.js",
   integrity: "sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo",
   crossorigin: "anonymous",
@@ -325,14 +328,14 @@ const Index = () => __jsx("body", {
 
 /***/ }),
 
-/***/ 4:
+/***/ 3:
 /*!******************************!*\
   !*** multi ./pages/index.js ***!
   \******************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = __webpack_require__(/*! C:\Users\akaha\Desktop\github_projects\know_your_scene\pages\index.js */"./pages/index.js");
+module.exports = __webpack_require__(/*! /home/adam/Desktop/project_workspace/know_your_scene/pages/index.js */"./pages/index.js");
 
 
 /***/ }),
