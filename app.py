@@ -24,5 +24,3 @@ def login():
 @app.route('/my-scene')
 def my_scene():
     return render_template('my_scene.html')
-
-d
