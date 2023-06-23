@@ -15,7 +15,7 @@
 		
 		<ul>
 			{% for result in results %}
-			<li>{{ result.concert_id }} - {{ result.concert_venue }} - {{ result.concert_date }} - {{ result.concert_city }} - {{ result.concert_state }} - {{ result.band_name }}</li>
+			<li>{{ result[0] }} - {{ result[1] }} - {{ result[2] }} - {{  result[3]  }}</li>
 			{% endfor %}
 		</ul>
 	</body>

@@ -1,5 +1,5 @@
-from flask import Flask, render_template
-from flask_mysql import MySQL
+from flask import Flask, render_template, request
+from flask_mysqldb import MySQL
 
 app = Flask(__name__)
 app.config.from_pyfile('config.py')
@@ -19,23 +19,21 @@ def add_show():
 # Search Band Route
 @app.route("/search-band")
 def search_band():
+    print("You are searching for a band")
     # Retrieve the search query from the URL parameters
     search_query = request.args.get("search_query")
 
     # Execute the SQL query
     cursor = mysql.connection.cursor()
     query = """
-    SELECT concert_id, concert_venue, concert_date, concert_city, concert_state, band_name
-    FROM concert
-    INNER JOIN concert_lineup ON concert.concert_id = concert_lineup._concert_id
-    JOIN band ON band.band_id = concert_lineup._band_id
+    SELECT band_name, genre, band_state FROM band
     WHERE band_name LIKE %s
     """
     cursor.execute(query, (f"%{search_query}%",))
 
     # Fetch the query results
     results = cursor.fetchall()
-
+    print(results)
     # Close the cursor
     cursor.close()
 
