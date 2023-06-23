@@ -1,14 +1,33 @@
 <!DOCTYPE html>
 <html>
-	<head>
-		<title>Search for Band</title>
-	</head>
-	<body>
-		<h1>Search Bands</h1>
+<head>
+	<title>Search for Band</title>
+	<!-- Bootstrap CSS -->
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+</head>
+<body>
+	<div class="container">
+		<h1>Search For a Band</h1>
 
 		<form action="/search-band" method="GET">
-			<input type="text" name="search_query" placeholder="Search bands...">
-			<button type="submit">Search</button>
+			<div class="input-group mb-3">
+				<input type="text" class="form-control" name="search_query" placeholder="Search bands...">
+				<div class="input-group-append">
+					<button class="btn btn-primary" type="submit">Search</button>
+				</div>
+			</div>
 		</form>
-	</body>
+
+		<h2>Results:</h2>
+
+		<ul class="list-group">
+			{% for result in results %}
+			<li class="list-group-item">{{ result[0] }} - {{ result[1] }} - {{ result[2] }}</li>
+			{% endfor %}
+		</ul>
+	</div>
+
+	<!-- Bootstrap JS -->
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+</body>
 </html>

@@ -38,7 +38,7 @@ def search_band():
     cursor.close()
 
     # Render the template with the search results
-    return render_template("index.html", results=results)
+    return render_template("search.html", results=results)
 
 @app.route('/login')
 def login():
