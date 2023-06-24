@@ -13,13 +13,14 @@ h2 {
 }
 
 .sidebar {
-    width: 250px;
+    width: 200px;
     position: fixed;
     top: 0;
     left: 0;
     height: 100vh;
-    background-color: #f8f9fa;
-    padding-top: 60px;
+    background-color: #2d3133;
+    color:#ebebeb;
+    padding-top: 20px;
     transition: width 0.3s ease-in-out;
 }
 
@@ -41,11 +42,11 @@ h2 {
     display: block;
     padding: 10px;
     text-decoration: none;
-    color: #000;
+    color: #ffffff;
 }
 
 .sidebar a:hover {
-    background-color: #eee;
+    background-color: #686d6e;
 }
 
 .sidebar a i {

@@ -12,6 +12,7 @@ mysql = MySQL(app)
 def index():
     return render_template('index.html')
 
+# Add a show to the DB
 @app.route('/add-show')
 def add_show():
     return render_template('add_show.html')
@@ -38,15 +39,27 @@ def search_band():
     cursor.close()
 
     # Render the template with the search results
-    return render_template("search.html", results=results)
+    return render_template("search_bands.html", results=results)
 
+# Render Login Page
 @app.route('/login')
 def login():
     return render_template('login.html')
 
-@app.route('/my-scene')
-def my_scene():
-    return render_template('my_scene.html')
+# Display Scene information page
+@app.route('/the-scene')
+def the_scene():
+    return render_template('the_scene.html')
+
+# Display a show information page
+@app.route('/show')
+def show():
+    return render_template('show.html')
+
+# Display a band information page
+@app.route('/band')
+def band():
+    return render_template('band.html')
 
 if __name__ == "__main__":
     app.run()
