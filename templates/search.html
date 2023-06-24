@@ -4,13 +4,15 @@
 	<title>Search for Band</title>
 	<!-- Bootstrap CSS -->
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+	<!-- Custom CSS File -->
+	<link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
 </head>
 <body>
 	<div class="container">
-		<h1>Search For a Band</h1>
+		<h1 class="mt-3">Search For a Band</h1>
 
 		<form action="/search-band" method="GET">
-			<div class="input-group mb-3">
+			<div class="input-group mb-5">
 				<input type="text" class="form-control" name="search_query" placeholder="Search bands...">
 				<div class="input-group-append">
 					<button class="btn btn-primary" type="submit">Search</button>
@@ -22,7 +24,7 @@
 
 		<ul class="list-group">
 			{% for result in results %}
-			<li class="list-group-item">{{ result[0] }} - {{ result[1] }} - {{ result[2] }}</li>
+			<li class="list-group-item mt-2">{{ result[0] }} - {{ result[1] }} - {{ result[2] }}</li>
 			{% endfor %}
 		</ul>
 	</div>
