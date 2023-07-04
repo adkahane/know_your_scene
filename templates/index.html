@@ -42,7 +42,7 @@
 		<!-- Page Content -->
 		<div class="container-fluid">
 			<h1 class="mt-3 text-center">Find My Scene</h1>
-			<form action="/search" method="GET">
+			<form action="/the-scene" method="GET" id="searchForm">
 				<div class="form-row">
 					<div class="form-group col-md-2">
 						<label for="state">State</label>
@@ -72,8 +72,23 @@
 						<input type="text" class="form-control datepicker" id="startDate">
 					</div>
 				</div>
-				<button type="submit">Search</button>
+				<button class="btn btn-primary" type="submit">Filter</button>
 			</form>
+
+			<div id="timeline" class="timeline">
+				<div class="timeline">
+					{% for result in results %}
+					<div class="timeline-item">
+						<div class="timeline-content">
+							<h3>{{ result['band_name'] }}</h3>
+							<p>Venue: {{ result['concert_venue'] }}</p>
+							<p>Date: {{ result['concert_date'] }}</p>
+							<p>Location: {{ result['concert_city'] }}, {{ result['concert_state'] }}</p>
+						</div>
+					</div>
+					{% endfor %}
+				</div>
+			</div>
 		</div>
 
 		<!-- Add Font Awesome JS -->

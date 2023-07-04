@@ -10,57 +10,78 @@ mysql = MySQL(app)
 # Homepage route
 @app.route('/')
 def index():
-    return render_template('index.html')
+	return render_template('index.html')
 
 # Add a show to the DB
 @app.route('/add-show')
 def add_show():
-    return render_template('add_show.html')
+	return render_template('add_show.html')
 
 # Search Band Route
 @app.route("/search-band")
 def search_band():
-    print("You are searching for a band")
-    # Retrieve the search query from the URL parameters
-    search_query = request.args.get("search_query")
+	print("You are searching for a band")
+	# Retrieve the search query from the URL parameters
+	search_query = request.args.get("search_query")
 
-    # Execute the SQL query
-    cursor = mysql.connection.cursor()
-    query = """
-    SELECT band_name, genre, band_state FROM band
-    WHERE band_name LIKE %s
-    """
-    cursor.execute(query, (f"%{search_query}%",))
+	# Execute the SQL query
+	cursor = mysql.connection.cursor()
+	query = """
+	SELECT band_name, genre, band_state FROM band
+	WHERE band_name LIKE %s
+	"""
+	cursor.execute(query, (f"%{search_query}%",))
 
-    # Fetch the query results
-    results = cursor.fetchall()
-    print(results)
-    # Close the cursor
-    cursor.close()
+	# Fetch the query results
+	results = cursor.fetchall()
+	print(results)
+	# Close the cursor
+	cursor.close()
 
-    # Render the template with the search results
-    return render_template("search_bands.html", results=results)
+	# Render the template with the search results
+	return render_template("search_bands.html", results=results)
 
 # Render Login Page
 @app.route('/login')
 def login():
-    return render_template('login.html')
+	return render_template('login.html')
 
 # Display Scene information page
 @app.route('/the-scene')
 def the_scene():
-    return render_template('the_scene.html')
+	print("Rendering your Scene...")
+	search_query = request.args.get("search_query")
+
+	# Execute SQL
+	cursor = mysql.connection.cursor()
+	query = """
+	SELECT concert_id, concert_venue, concert_date, concert_city, concert_state, band_name FROM concert 
+	INNER JOIN concert_lineup ON 
+	concert.concert_id = concert_lineup._concert_id 
+	JOIN band ON 
+	band.band_id = concert_lineup._band_id;
+	"""
+	cursor.execute(query, (f"%{search_query}%",))
+
+	# Fetch the query results
+	results = cursor.fetchall()
+	print(results)
+	# Close the cursor
+	cursor.close()
+
+	# Render the template with the search results
+	return render_template('index.html', results=results)
 
 # Display a show information page
 @app.route('/show')
 def show():
-    return render_template('show.html')
+	return render_template('show.html')
 
 # Display a band information page
 @app.route('/band')
 def band():
-    return render_template('band.html')
+	return render_template('band.html')
 
 if __name__ == "__main__":
-    app.run()
+	app.run()
 
