@@ -26,7 +26,8 @@ CREATE TABLE concert (
     concert_venue VARCHAR(40),
     concert_city VARCHAR(30) NOT NULL,
     concert_state VARCHAR(2) NOT NULL,
-    genre VARCHAR(40) NOT NULL,
+    scene VARCHAR(40) NOT NULL,
+    sub_scene VARCHAR(40),
     flyer VARCHAR(255),
     PRIMARY KEY (concert_id)
 );

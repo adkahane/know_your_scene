@@ -46,33 +46,29 @@
 				<div class="form-row">
 					<div class="form-group col-md-2">
 						<label for="state">State</label>
-						<select id="state" class="form-control">
-							<option selected>Choose...</option>
-							<option value="">Select a state</option>
+						<select id="state" class="form-control" name="state" required>
+							<option value="">State</option>
 						</select>
 					</div>
 					<div class="form-group col-md-2">
-						<label for="genre">City</label>
-						<input type="text" class="form-control" id="genre">
+						<label for="city">City</label>
+						<input type="text" class="form-control" id="city" name="city">
 					</div>
 					<div class="form-group col-md-2">
-						<label for="genre">Genre</label>
-						<input type="text" class="form-control" id="genre">
+						<label for="scene">Music Scene</label>
+						<input type="text" class="form-control" id="scene" name="scene" required>
 					</div>
 					<div class="form-group col-md-2">
-						<label for="subgenre">Subgenre</label>
-						<input type="text" class="form-control" id="subgenre">
+						<label for="start_date">Start Date</label>
+						<input type="text" class="form-control datepicker" id="start_date" name="start_date">
 					</div>
 					<div class="form-group col-md-2">
-						<label for="startDate">Start Date</label>
-						<input type="text" class="form-control datepicker" id="startDate">
-					</div>
-					<div class="form-group col-md-2">
-						<label for="startDate">End Date</label>
-						<input type="text" class="form-control datepicker" id="startDate">
+						<label for="end_date">End Date</label>
+						<input type="text" class="form-control datepicker" id="end_date" name="end_date">
 					</div>
 				</div>
-				<button class="btn btn-primary" type="submit">Filter</button>
+				<button class="btn btn-primary" type="submit">Apply Filter</button>
+				<p id="error" class="error-msg" style="display: none;"></p>
 			</form>
 
 			<div id="timeline" class="timeline">
@@ -81,9 +77,9 @@
 					<div class="timeline-item">
 						<div class="timeline-content">
 							<h3>{{ result['band_name'] }}</h3>
-							<p>Venue: {{ result['concert_venue'] }}</p>
-							<p>Date: {{ result['concert_date'] }}</p>
-							<p>Location: {{ result['concert_city'] }}, {{ result['concert_state'] }}</p>
+							<p>Venue: {{ result[1] }}</p>
+							<p>Date: {{ result[2] }}</p>
+							<p>Location: {{ result[3] }}, {{ result[4] }}</p>
 						</div>
 					</div>
 					{% endfor %}

@@ -5,6 +5,42 @@ $(document).ready(function() {
 		sidebar.classList.toggle("collapsed");
 	}
 
+	// Show error message if forms left empty
+	document.getElementById('searchForm').addEventListener('submit', function(event) {
+		// Prevent the form from submitting
+		event.preventDefault();
+
+		// Reset the error message
+		var errorElement = document.getElementById("error");
+		errorElement.style.display = "none";
+
+		var stateField = document.getElementById('state');
+		var sceneField = document.getElementById('scene');
+		
+		if (stateField.value === "") {
+			displayErrorMessage('Please select a state.');
+			//event.preventDefault();
+			errorElement.style.display = "block";
+			//return;
+		} else if (sceneField.value === "") {
+			displayErrorMessage('Please enter a music scene.');
+			//event.preventDefault();
+			errorElement.style.display = "block";
+			//return;
+		} else {
+			this.submit()
+		}
+		
+		// Continue form submission if all mandatory fields have values
+	});
+	
+	function displayErrorMessage(message) {
+		var errorElement = document.getElementById('error');
+		errorElement.innerText = message;
+		errorElement.style.display = 'block';
+	}
+
+
 	// Attach the toggleSidebar function to the button click event
 	$('#sidebar-toggle').click(function() {
 		toggleSidebar();
